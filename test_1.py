@@ -5,7 +5,7 @@ def test_has_title(page: Page):
     page.goto("http://uitestingplayground.com")
 
     # Expect a title "to contain" a substring.
-    expect(page).to_have_title(re.compile("UI Test Automation"))
+    expect(page).to_have_title(re.compile("UI est Automation"))
 
 def test_get_started_link(page: Page):
     page.goto("http://uitestingplayground.com")
