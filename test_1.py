@@ -17,7 +17,7 @@ def test_get_started_link(page: Page):
     expect(page.get_by_role("heading", name="Dynamic ID")).to_be_visible()
 
 def test_auto_waiting(page: Page):
-    page.context.tracing.start(screenshots=True, snapshots=True)
+    # page.context.tracing.start(screenshots=True, snapshots=True)
 
     page.goto("http://uitestingplayground.com")
 
@@ -25,7 +25,7 @@ def test_auto_waiting(page: Page):
     page.get_by_role("button", name="Apply 10s").click()
     page.get_by_role("button", name="Button").click()
 
-    page.context.tracing.stop(path='trace.zip')
+    # page.context.tracing.stop(path='trace.zip')
 
 def test_child_elements_location(page: Page):
     page.goto("http://uitestingplayground.com")
