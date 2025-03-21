@@ -29,3 +29,4 @@ jobs:
         path: test-results/
     
     - run: ls -la
+      if: ${{ always() }}
