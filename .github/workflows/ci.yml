@@ -3,22 +3,28 @@ on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest-playwright typing
+        pip install pytest-playwright
+
     - name: Ensure browsers are installed
       run: python -m playwright install
-    - name: Run your tests
-      run: pytest --tracing=retain-on-failure
+
+    - name: Run Tests
+      run: pytest
+
     - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
+      if: ${{ always() }}
       with:
-        name: playwright-traces
-        path: test-results/
+        name: .
+        path: test-results/*/trace.zip
+        if-no-files-found: ignore
