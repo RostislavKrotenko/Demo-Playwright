@@ -18,8 +18,13 @@ jobs:
 
     - name: Ensure browsers are installed
       run: python -m playwright install
-    - name: Run your tests
-      run: pytest --tracing=retain-on-failure
+
+    - name: Run Tests
+      run: pytest
+    
+    - run: ls -la 
+      if: ${{ always() }}
+
     - uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
