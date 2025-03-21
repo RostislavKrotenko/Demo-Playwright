@@ -25,8 +25,11 @@ jobs:
     - uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
-        name: playwright-traces
-        path: test-results/
+        name: trace.zip
+        path: test-results/*/
     
-    - run: ls -la
+    - run: |
+        ls -la
+        cd test-results
+        ls -la 
       if: ${{ always() }}
