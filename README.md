@@ -15,7 +15,7 @@ Next command allows to save a result of run in specific file with manager:
 
 ## Parrarel test run
 
-Install additional package to parrarel run:
+Install additional package for parrarel running:
 `pip install pytest-xdist`
 
 Then use this command to parrarel run:
