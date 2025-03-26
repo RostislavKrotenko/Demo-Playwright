@@ -1,3 +1,1 @@
-pytest
-playwright
-typing_extensions
+pytest-playwright

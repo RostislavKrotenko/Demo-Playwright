@@ -21,9 +21,3 @@ jobs:
 
     - name: Run Tests
       run: pytest
-    
-    - run: |
-        ls -la
-        cd test-results
-        ls -la 
-      if: ${{ always() }}
