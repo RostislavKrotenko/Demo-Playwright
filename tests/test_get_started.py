@@ -15,4 +15,3 @@ def test_get_started_link(page: Page):
 
     # Expects page to have a heading with the name of Dynamic ID.
     expect(page.get_by_role("heading", name="Dynamic ID")).to_be_visible()
-    
